@@ -40,14 +40,14 @@ a:hover, a:visited, a:link, a:active
   font-size: 2rem;
 }
 
-.text-button{
-  color: white;
-  stroke: black 2px;
-  font-size: 2rem;
-  filter: blue(0);
-}
-
 .title{
   color: grey;
   font-size: 2em;
+}
+
+.circular-image-text{
+  stroke: black 2px;
+  font-size: 2rem;
+  filter: blur(0);
+  pointer-events: none;
 }
