@@ -9,17 +9,17 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div className='Home'>
-      <CircularImage imgSrc={lovisaImg} diameter={100} />
-      <p>Hej jag heter Lovisa</p>
+      <CircularImage imgSrc={lovisaImg} diameter={100} hoverEffect={false} />
+      <p className='title'>Hej jag heter Lovisa</p>
       <div className='container-horizontal'>
         <Link to="/cv">
-          <CircularImage imgSrc={cvImg} diameter={80} />
+          <CircularImage imgSrc={cvImg} diameter={80} text='CV' />
         </Link>
-        <Link to="/portfolio">
-          <CircularImage imgSrc={portImg} diameter={80} />
-        </Link>
+        <a href="https://www.linkedin.com/in/lovisa-hassler/">
+          <CircularImage imgSrc={portImg} diameter={80} text='LinkedIn' />
+        </a>
         <Link to="/about">
-          <CircularImage imgSrc={aboutImg} diameter={80} />
+          <CircularImage imgSrc={aboutImg} diameter={80} text='About me'/>
         </Link>
       </div>
     </div>

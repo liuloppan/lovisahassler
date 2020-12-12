@@ -4,13 +4,15 @@ import styled from 'styled-components';
 interface Props{
   diameter?: number;
   imgSrc: string;
-  hoverFactor?: number;
+  hoverEffect?: boolean;
+  text?: string;
 }
 
 interface MaskProps extends HTMLAttributes<HTMLDivElement>{
   size: number;
   factor: number;
   url: string;
+  blur: string;
 }
 
 const Mask = styled.div<MaskProps>`
@@ -18,7 +20,7 @@ const Mask = styled.div<MaskProps>`
   height: 200px;
   width: 200px;
   clip-path: ${(p) => `circle(${p.size}px at center)`};
-  filter: blur(4px);
+  filter: ${(p) => `blur(${p.blur})`};
   transition: 0.1s;
   text-align: center;
   justify-content: center;
@@ -32,11 +34,13 @@ const Mask = styled.div<MaskProps>`
   }
 `;
 
-const CircularImage: FC<Props> = ({imgSrc, diameter = 60, hoverFactor = 1.1}) => {
+const CircularImage: FC<Props> = ({imgSrc, text = '', diameter = 60, hoverEffect = true}) => {
   return (
-    <Mask size={diameter} factor={hoverFactor} url={imgSrc}>
-      <div className='text'>CV</div>
-    </Mask>
+    <div>
+      <Mask size={diameter} blur={hoverEffect ? '4px' : '0'} factor={hoverEffect ? 1.1 : 1} url={imgSrc} >
+        <div className='text-button'>{text}</div>
+      </Mask>
+    </div>
   );
 }
 
