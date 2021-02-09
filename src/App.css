@@ -1,15 +1,8 @@
 .App {
-  margin: 0;
-  padding: 0;
   height: 100vh;
   width: 100vw;
-  text-align: center;
-  align-items: center;
-  overflow-x: hidden;
+
   background:#7395AE;
-  overflow-y: hidden;
-  display: flex;
-  align-items: center;
 }
 
 a:hover, a:visited, a:link, a:active
@@ -17,21 +10,44 @@ a:hover, a:visited, a:link, a:active
     text-decoration: none;
 }
 
+.spacer{
+  height: 40px;
+}
+
 .Home {
-  padding-top: 0px;
-  padding-bottom: 60px;
   width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.profile {
+  flex-direction: column;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+} 
+.profile-image-container{
+  position: relative;
+  width: 220px;
+  height: 200px;
+  padding-top: 30px;
+}
+
+.container-vertical{
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
 .container-horizontal{
   display: flex;
   width: 100%;
-  height: 80px;
+  height: 40%;
   justify-content: center;
 }
 
@@ -50,4 +66,16 @@ a:hover, a:visited, a:link, a:active
   font-size: 2rem;
   filter: blur(0);
   pointer-events: none;
+}
+
+.flip-card {
+  position: absolute;
+  max-width: 220px;
+  max-height: 220px;
+  width: 50ch;
+  height: 50ch;
+  cursor: pointer;
+  will-change: transform, opacity;
+  background-size: cover;
+  border-radius: 10%;
 }

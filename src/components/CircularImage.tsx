@@ -60,7 +60,5 @@ const CircularImage: FC<Props> = ({imgSrc, text = '', diameter = 60, hoverEffect
   );
 }
 
-/*<img src={imgSrc} alt={altStr} max-width='200px' max-height='20px' />*/
-
 
 export default CircularImage;
